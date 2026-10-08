@@ -52,8 +52,8 @@ See `bb_captouch/examples/touch_demo/touch_demo.ino` for usage.
 
 1. Install [EarlePhilhower RP2040 board support](https://github.com/earlephilhower/arduino-pico) in Arduino IDE.
 2. Select **Tools → Board → Raspberry Pi Pico** (or Pico W).
-3. Copy this folder into your Arduino sketchbook.
-4. Open `treedee.ino` and upload.
+3. Copy the `RA8876_RP2040` folder into the `libraries/` folder of your Arduino sketchbook (typically `~/Documents/Arduino/libraries/`), then restart the Arduino IDE.
+4. Open **File → Examples → RA8876_RP2040 → treedee**, adjust the pins in its `RA8876_Config_SPI.h` tab if needed, and upload.
 
 ### Board settings
 
@@ -86,7 +86,7 @@ See `bb_captouch/examples/touch_demo/touch_demo.ino` for usage.
 ```cpp
 #include "RA8876_Config_SPI.h"
 #include <SPI.h>
-#include "src/RA8876_RP2040.h"
+#include <RA8876_RP2040.h>
 
 RA8876_RP2040 tft(RA8876_CS, RA8876_RESET, RA8876_MOSI, RA8876_SCLK, RA8876_MISO);
 
