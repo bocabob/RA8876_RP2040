@@ -115,7 +115,7 @@ class RA8876_RP2040 : public RA8876_common {
     inline __attribute__((always_inline)) void startSend() {
         if (!RA8876_BUSY) {
             RA8876_BUSY = true;
-            _pspi->beginTransaction(SPISettings(_SPI_CLOCK, MSBFIRST, SPI_MODE0));
+            _pspi->beginTransaction(SPISettings(_SPI_CLOCK, MSBFIRST, SPI_MODE3));
         }
         digitalWrite(_cs, LOW);
     }
@@ -137,13 +137,14 @@ class RA8876_RP2040 : public RA8876_common {
     int _cs;
     int _rst;
     int _errorCode;
-    SPIClass *_pspi = nullptr;
 
     uint8_t _spi_num;         // Which SPI bus (0 or 1 on Pico)
     uint32_t _SPI_CLOCK;      // SPI clock speed
     uint32_t _SPI_CLOCK_READ; // SPI read clock speed
 
   protected:
+    // Exposed to derived classes for bulk pixel transfers (e.g. TT_Display::drawRGB565)
+    SPIClass *_pspi = nullptr;
 };
 
 #endif

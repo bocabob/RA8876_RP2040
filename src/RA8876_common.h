@@ -776,7 +776,9 @@ class RA8876_common : public Print {
     bool _scaling;
     uint8_t _cursorXsize;
     uint8_t _cursorYsize;
-    uint8_t _FNTwidth, _FNTheight;
+  protected:
+    uint8_t _FNTwidth, _FNTheight;  // exposed protected so subclasses can sync cursor metrics
+  private:
     uint8_t _FNTspacing;
     uint8_t _FNTinterline;
     int _spaceCharWidth;
