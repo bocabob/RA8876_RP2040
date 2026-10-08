@@ -6,6 +6,13 @@ Includes the `treedee` example — a 3D rotating wire-frame cube adapted from su
 
 ---
 
+## Documentation
+
+- [Usage guide](docs/RA8876_RP2040_Guide.md) — functions and methods, configuration, hardware features
+- [RA8876_RP2040 vs TFT_eSPI_RA8876](docs/Library_Comparison.md) — which library to choose
+
+---
+
 ## Hardware
 
 | Component | Notes |
